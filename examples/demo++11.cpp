@@ -49,11 +49,11 @@
  * GNU Lesser General Public License (LGPL) version 2.1.
 */
 
+#include <iomanip>
 #include <iostream>
 #include <sstream>
-#include <iomanip>
 
-#define _USE_MATH_DEFINES // Enable M_PI constant from the next inclusion
+#define _USE_MATH_DEFINES// Enable M_PI constant from the next inclusion
 
 #include <cmath>
 
@@ -64,7 +64,7 @@ using namespace std;
 class MyWindow1 : public EZWindow {
 public:
     MyWindow1(int w, int h, const char *name)
-            : EZWindow(w, h, name) { setDoubleBuffer(true); }
+        : EZWindow(w, h, name) { setDoubleBuffer(true); }
 
     void expose() {
         const char *color_names[9] = {"EZColor::black", "EZColor::white", "EZColor::grey", "EZColor::red",
@@ -126,11 +126,11 @@ public:
     void keyPress(EZKeySym keysym) {
         switch (keysym) {
             case EZKeySym::Escape:
-            case EZKeySym::q  :
+            case EZKeySym::q:
                 EZDraw::quit();
                 break;
-            default: // Dans tous les autres cas on ne fait rien (necessaire
-                break; // pour eviter un warning a la compilation).
+            default:  // Dans tous les autres cas on ne fait rien (necessaire
+                break;// pour eviter un warning a la compilation).
         }
     }
 
@@ -138,7 +138,7 @@ public:
 };
 
 
-int main(int /*argc*/, char */*argv*/[]) {
+int main(int /*argc*/, char * /*argv*/[]) {
     EZDraw ezDraw;
     MyWindow1 win1(410, 320, "Demo++11 : Couleurs");
 
@@ -146,5 +146,3 @@ int main(int /*argc*/, char */*argv*/[]) {
 
     return 0;
 }
-
-

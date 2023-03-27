@@ -49,11 +49,11 @@
  * GNU Lesser General Public License (LGPL) version 2.1.
 */
 
+#include <iomanip>
 #include <iostream>
 #include <sstream>
-#include <iomanip>
 
-#define _USE_MATH_DEFINES // Enable M_PI constant from the next inclusion
+#define _USE_MATH_DEFINES// Enable M_PI constant from the next inclusion
 
 #include <cmath>
 
@@ -88,9 +88,8 @@ class MyWindow1 : public EZWindow {
                     S = dc / rc;
 
                     /* acos() returns angle between 0 and +M_PI */
-                    H = (S == 0) ? 0 :
-                        (dy <= 0) ? acos(dx / dc) * 180 / M_PI :
-                        -acos(dx / dc) * 180 / M_PI + 360;
+                    H = (S == 0) ? 0 : (dy <= 0) ? acos(dx / dc) * 180 / M_PI
+                                                 : -acos(dx / dc) * 180 / M_PI + 360;
 
                     image.getPixel(x, y).setColor(EZColor(H, S, value));
                 } else
@@ -101,7 +100,7 @@ class MyWindow1 : public EZWindow {
 
 public:
     MyWindow1(int w, int h, const char *name)
-            : EZWindow(w + 20, h + 40, name), value(1), image(w, h), time(0) {
+        : EZWindow(w + 20, h + 40, name), value(1), image(w, h), time(0) {
         setDoubleBuffer(true);
         time = computeHSVImage();
     }
@@ -120,17 +119,17 @@ public:
     void keyPress(EZKeySym keysym) {
         switch (keysym) {
             case EZKeySym::Escape:
-            case EZKeySym::q  :
+            case EZKeySym::q:
                 EZDraw::quit();
                 break;
-            case EZKeySym::space :
+            case EZKeySym::space:
                 value -= 0.05;
                 if (value < 0) value = 1;
                 time = computeHSVImage();
                 sendExpose();
                 break;
-            default: // Dans tous les autres cas on ne fait rien (necessaire
-                break; // pour eviter un warning a la compilation).
+            default:  // Dans tous les autres cas on ne fait rien (necessaire
+                break;// pour eviter un warning a la compilation).
         }
     }
 
@@ -138,7 +137,7 @@ public:
 };
 
 
-int main(int /*argc*/, char */*argv*/[]) {
+int main(int /*argc*/, char * /*argv*/[]) {
     EZDraw ezDraw;
     MyWindow1 win1(400, 400, "Demo++12 : Palette HSV");
 

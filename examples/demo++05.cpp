@@ -59,7 +59,7 @@ using namespace std;
 class MyWindow : public EZWindow {
 public:
     MyWindow(int w, int h, const char *name)
-            : EZWindow(w, h, name) {}
+        : EZWindow(w, h, name) {}
 
     // Fenetre devenue visible ; contenu a redessiner :
     void expose() {
@@ -120,7 +120,7 @@ public:
 };
 
 
-int main(int /*argc*/, char */*argv*/[]) {
+int main(int /*argc*/, char * /*argv*/[]) {
     EZDraw ezDraw;
 
     MyWindow win1(400, 300, "Demo++05 : trace les evenements");
@@ -133,4 +133,3 @@ int main(int /*argc*/, char */*argv*/[]) {
 
     return 0;
 }
-

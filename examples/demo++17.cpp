@@ -48,9 +48,9 @@
  * This program is free software under the terms of the
  * GNU Lesser General Public License (LGPL) version 2.1.
 */
+#include <iomanip>
 #include <iostream>
 #include <sstream>
-#include <iomanip>
 
 using namespace std;
 
@@ -59,9 +59,10 @@ using namespace std;
 class Ball {
     int x, y;
     int dx, dy;
+
 public:
     Ball()
-            : x(0), y(0), dx(0), dy(0) {}
+        : x(0), y(0), dx(0), dy(0) {}
 
     void init(const EZWindow &win, const EZImage &img) {
         x = EZDraw::random(win.getWidth() - img.getWidth());
@@ -74,23 +75,19 @@ public:
         if (dx < 0 && x < -dx) {
             x = 0;
             dx = -dx;
-        }
-        else if (x > win.getWidth() - img.getWidth()) {
+        } else if (x > win.getWidth() - img.getWidth()) {
             x = win.getWidth() - img.getWidth();
             dx = -dx;
-        }
-        else
+        } else
             x += dx;
 
         if (dy < 0 && y < -dy) {
             y = 0;
             dy = -dy;
-        }
-        else if (y > win.getHeight() - img.getHeight()) {
+        } else if (y > win.getHeight() - img.getHeight()) {
             y = win.getHeight() - img.getHeight();
             dy = -dy;
-        }
-        else
+        } else
             y += dy;
     }
 
@@ -119,10 +116,9 @@ class MyWindow : public EZWindow {
     }
 
 public:
-
     MyWindow(const char *name, const char *filename)
-            : EZWindow(900, 700, name), image(filename), pixmap(image), nbBalls(50), nbExpose(0), time_ref(0), fps(-1),
-              usePixmaps(false) {
+        : EZWindow(900, 700, name), image(filename), pixmap(image), nbBalls(50), nbExpose(0), time_ref(0), fps(-1),
+          usePixmaps(false) {
         setDoubleBuffer(true);
         for (size_t i = 0; i < nbBalls; ++i)
             balls[i].init(*this, image);
@@ -136,7 +132,8 @@ public:
         for (size_t i = 0; i < nbBalls; ++i)
             if (usePixmaps)
                 balls[i].paint(*this, pixmap);
-            else balls[i].paint(*this, image);
+            else
+                balls[i].paint(*this, image);
 
         setColor(EZColor::black);
         ostringstream oss;
@@ -168,15 +165,15 @@ public:
                 sendExpose();
                 break;
             case EZKeySym::Escape:
-            case EZKeySym::q  :
+            case EZKeySym::q:
                 EZDraw::quit();
                 break;
-            default: // Dans tous les autres cas on ne fait rien (necessaire
-                break; // pour eviter un warning a la compilation).
+            default:  // Dans tous les autres cas on ne fait rien (necessaire
+                break;// pour eviter un warning a la compilation).
         }
     }
 
-    void timerNotify() // declenchee a chaque fois que le timer est ecoule.
+    void timerNotify()// declenchee a chaque fois que le timer est ecoule.
     {
         for (size_t i = 0; i < nbBalls; ++i)
             balls[i].step(*this, image);
@@ -186,7 +183,7 @@ public:
 };
 
 
-int main(int /*argc*/, char */*argv*/[]) {
+int main(int /*argc*/, char * /*argv*/[]) {
     EZDraw ezDraw;
 
     MyWindow win1("Demo++17 : Pixmaps", "images/ball2.gif");
@@ -195,4 +192,3 @@ int main(int /*argc*/, char */*argv*/[]) {
 
     return 0;
 }
-

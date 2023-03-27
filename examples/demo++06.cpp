@@ -58,9 +58,10 @@ using namespace std;
 
 class MyWindow : public EZWindow {
     int ax, ay, ab;
+
 public:
     MyWindow(int w, int h, const char *name)
-            : EZWindow(w, h, name), ax(0), ay(0), ab(0) {}
+        : EZWindow(w, h, name), ax(0), ay(0), ab(0) {}
 
     void expose() {
         setColor(EZColor::black);
@@ -98,14 +99,14 @@ public:
     // Une touche du clavier a ete enfoncee ou relachee :
     void keyPress(EZKeySym keysym) {
         switch (keysym) {
-            case EZKeySym::q :
+            case EZKeySym::q:
                 EZDraw::quit();
                 break;
-            case EZKeySym::space :
+            case EZKeySym::space:
                 sendExpose();
                 break;
-            default: // Dans tous les autres cas on ne fait rien (necessaire
-                break; // pour eviter un warning a la compilation).
+            default:  // Dans tous les autres cas on ne fait rien (necessaire
+                break;// pour eviter un warning a la compilation).
         }
     }
 };
@@ -113,16 +114,16 @@ public:
 // Une classe dérivée de EZDraw pour attacher notre fenêtre.
 class MyApp : public EZDraw {
     MyWindow win1;
+
 public:
     MyApp()
-            : win1(400, 300, "Demo++06 : dessin a la souris") {}
+        : win1(400, 300, "Demo++06 : dessin a la souris") {}
 };
 
-int main(int /*argc*/, char */*argv*/[]) {
+int main(int /*argc*/, char * /*argv*/[]) {
     MyApp myapp;
 
     myapp.mainLoop();
 
     return 0;
 }
-
