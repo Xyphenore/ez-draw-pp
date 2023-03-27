@@ -54,7 +54,7 @@
 
 using namespace std;
 
-#include "ez-draw++.hpp"
+#include <ez-draw-pp/ez-draw++.hpp>
 
 // Les declarations de classes :
 

@@ -68,7 +68,7 @@
  * GNU Lesser General Public License (LGPL) version 2.1.
 */
 
-#include "ez-draw++.hpp"
+#include <ez-draw-pp/ez-draw++.hpp>
 
 int main() {
     // La base de tout : la creation d'une instance de la classe EZDraw.

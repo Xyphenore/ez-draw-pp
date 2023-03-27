@@ -54,7 +54,9 @@
 
 using namespace std;
 
-#include "ez-draw++.hpp"
+#include <ez-draw-pp/ez-draw++.hpp>
+
+#include <config.hpp>
 
 class Ball {
     int x, y;
@@ -186,7 +188,7 @@ public:
 int main(int /*argc*/, char * /*argv*/[]) {
     EZDraw ezDraw;
 
-    MyWindow win1("Demo++17 : Pixmaps", "images/ball2.gif");
+    MyWindow win1("Demo++17 : Pixmaps", (examples::RESSOURCES_DIR + "/images/ball2.gif").c_str());
 
     ezDraw.mainLoop();
 

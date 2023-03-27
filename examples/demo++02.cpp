@@ -49,7 +49,7 @@
  * GNU Lesser General Public License (LGPL) version 2.1.
 */
 
-#include "ez-draw++.hpp"
+#include <ez-draw-pp/ez-draw++.hpp>
 
 class MyWindow : public EZWindow {
 public:

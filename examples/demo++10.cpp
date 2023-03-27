@@ -64,7 +64,7 @@
 
 using namespace std;
 
-#include "ez-draw++.hpp"
+#include <ez-draw-pp/ez-draw++.hpp>
 
 // Fenetre 1 : une horloge avec ses aiguilles qui tournent.
 

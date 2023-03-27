@@ -1,0 +1,5 @@
+#include <string>
+
+namespace examples {
+    const std::string RESSOURCES_DIR = "@RESSOURCES_DIR@";
+}

@@ -54,7 +54,7 @@
 
 using namespace std;
 
-#include "ez-draw++.hpp"
+#include <ez-draw-pp/ez-draw++.hpp>
 
 class MyWindow1 : public EZWindow {
     string tampon = "";

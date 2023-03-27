@@ -53,7 +53,9 @@
 
 using namespace std;
 
-#include "ez-draw++.hpp"
+#include <ez-draw-pp/ez-draw++.hpp>
+
+#include <config.hpp>
 
 class MyWindow : public EZWindow {
     EZImage fond, sprite;
@@ -105,8 +107,10 @@ public:
 int main(int /*argc*/, char * /*argv*/[]) {
     EZDraw ezDraw;
 
-    MyWindow win1("Demo++14 : affichage de deux images avec utilisation de l'alpha-channel", "images/paper1.jpg",
-                  "images/tux2.gif");
+    MyWindow win1(
+        "Demo++14 : affichage de deux images avec utilisation de l'alpha-channel",
+        (examples::RESSOURCES_DIR + "/images/paper1.jpg").c_str(),
+        (examples::RESSOURCES_DIR + "/images/tux2.gif").c_str());
 
     ezDraw.mainLoop();
 

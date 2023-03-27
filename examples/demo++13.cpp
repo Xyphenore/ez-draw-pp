@@ -53,7 +53,9 @@
 
 using namespace std;
 
-#include "ez-draw++.hpp"
+#include <ez-draw-pp/ez-draw++.hpp>
+
+#include <config.hpp>
 
 class MyWindow : public EZWindow {
     EZImage image;
@@ -97,7 +99,7 @@ public:
 int main(int /*argc*/, char * /*argv*/[]) {
     EZDraw ezDraw;
 
-    MyWindow win1("Demo++13 : affichage d'une image", "images/tux2.gif");
+    MyWindow win1("Demo++13 : affichage d'une image", (examples::RESSOURCES_DIR + "/images/tux2.gif").c_str());
 
     ezDraw.mainLoop();
 
