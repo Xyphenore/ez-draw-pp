@@ -30,3 +30,21 @@
 *.exe
 *.out
 *.app
+
+# Build directory of Intellij
+*build*
+.git/
+
+# Downloaded lib by cmake
+/tests/doctest/
+/docs/doxygen-awesome-css/
+
+# Doc config
+/docs/DoxygenConfig.conf
+
+# Python env
+.venv
+venv
+
+# Vale style
+.vale-styles
